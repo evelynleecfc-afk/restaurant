@@ -1,382 +1,87 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Restaurante Doña Mery | Comida Casera en Sogamoso</title>
-    <meta name="description" content="Disfruta del auténtico sabor de la comida casera en Sogamoso. Visita Restaurante Doña Mery y prueba nuestras recetas tradicionales preparadas con amor.">
-    <meta name="keywords" content="restaurante Sogamoso, comida casera, almuerzos, restaurante Doña Mery, comida tradicional colombiana">
-    <link rel="canonical" href="https://tudominio.com/">
-    
-    <meta property="og:title" content="Restaurante Doña Mery | Sabor de Hogar">
-    <meta property="og:description" content="Ven a disfrutar de la mejor comida casera en Sogamoso. Abierto todos los días.">
-    <meta property="og:type" content="website">
-    
+    <title>acueducto-comopago | Guía Educativa</title>
+    <meta name="description" content="Guía informativa y educativa sobre cómo pagar los servicios de acueducto en Colombia de manera virtual. Sitio no oficial.">
     <style>
         :root {
-            --primary: #e65100; /* Naranja cálido apetitoso */
-            --primary-hover: #e64a19;
-            --secondary: #ffb300;
-            --bg-color: #fffdf8; /* Crema muy claro */
-            --text-dark: #3e2723; /* Marrón oscuro */
-            --text-light: #5d4037;
+            --primary: #0277bd;
+            --primary-hover: #01579b;
+            --secondary: #4fc3f7;
+            --bg-color: #f0f8ff;
+            --text-dark: #263238;
             --white: #ffffff;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
-
-        /* Header */
-        header {
-            background-color: var(--white);
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* Botones y CTA */
-        .cta-button {
-            background-color: var(--primary);
-            color: var(--white);
-            padding: 14px 28px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 8px;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s;
-            display: inline-block;
-            text-align: center;
-        }
-
-        .cta-button:hover {
-            background-color: var(--primary-hover);
-            transform: translateY(-2px);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(62, 39, 35, 0.7), rgba(62, 39, 35, 0.7)), url('https://via.placeholder.com/1920x1080/e65100/ffffff?text=Comida+Casera+Tradicional') center/cover;
-            color: var(--white);
-            text-align: center;
-            padding: 100px 20px;
-        }
-
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Layout general de secciones */
-        .section {
-            padding: 80px 5%;
-            text-align: center;
-        }
-
-        .section-light {
-            background-color: var(--white);
-        }
-
-        .section-title {
-            font-size: 2.2rem;
-            color: var(--primary);
-            margin-bottom: 40px;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .card {
-            background: var(--white);
-            padding: 40px 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-bottom: 4px solid var(--primary);
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--text-dark);
-        }
-
-        /* Testimonios */
-        .testimonial-card {
-            background: var(--bg-color);
-            padding: 30px;
-            border-radius: 12px;
-            font-style: italic;
-            text-align: left;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-        }
-
-        .testimonial-author {
-            margin-top: 15px;
-            font-weight: 600;
-            font-style: normal;
-            color: var(--primary);
-        }
-
-        /* Contenedor de Información */
-        .info-box {
-            background: var(--bg-color);
-            border: 1px solid #f0e6d2;
-            padding: 40px;
-            border-radius: 12px;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: left;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        .info-box p {
-            margin-bottom: 12px;
-            font-size: 1.1rem;
-        }
-
-        /* Formulario */
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: left;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--text-dark);
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: inherit;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 2px rgba(230, 81, 0, 0.2);
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--text-dark);
-            color: var(--white);
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        footer a {
-            color: var(--secondary);
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .hero p { font-size: 1.1rem; }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-dark); line-height: 1.6; }
+        .disclaimer { background-color: #ffebee; color: #c62828; padding: 15px; text-align: center; font-weight: bold; font-size: 0.95rem; }
+        header { background-color: var(--white); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .cta-button { background-color: var(--primary); color: var(--white); padding: 14px 28px; font-weight: 600; text-decoration: none; border-radius: 8px; display: inline-block; transition: 0.3s; }
+        .cta-button:hover { background-color: var(--primary-hover); transform: translateY(-2px); }
+        .hero { background: linear-gradient(rgba(38, 50, 56, 0.8), rgba(38, 50, 56, 0.8)), url('https://via.placeholder.com/1920x1080/0277bd/ffffff?text=Agua+y+Servicios') center/cover; color: var(--white); text-align: center; padding: 100px 20px; }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .section { padding: 80px 5%; text-align: center; }
+        .section-light { background-color: var(--white); }
+        .section-title { font-size: 2.2rem; color: var(--primary); margin-bottom: 40px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+        .card { background: var(--white); padding: 40px 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-bottom: 4px solid var(--primary); }
+        .card h3 { font-size: 1.4rem; margin-bottom: 15px; color: var(--text-dark); }
+        .info-box { background: var(--bg-color); border: 1px solid #b3e5fc; padding: 40px; border-radius: 12px; max-width: 800px; margin: 0 auto; text-align: left; }
+        footer { background-color: var(--text-dark); color: var(--white); text-align: center; padding: 40px 20px; }
+        footer a { color: var(--secondary); text-decoration: none; margin: 0 10px; }
     </style>
 </head>
 <body>
-
+    <div class="disclaimer">
+        ⚠️ AVISO LEGAL: Esta página es MERAMENTE EDUCATIVA E INFORMATIVA. No somos una entidad gubernamental ni prestadora de servicios. No recibimos pagos ni pretendemos suplantar a ninguna empresa de acueducto en Colombia.
+    </div>
     <header>
-        <a href="index.html" class="logo">
-            🍽️ Restaurante Doña Mery
-        </a>
-        <a href="#contacto" class="cta-button" style="padding: 10px 20px; font-size: 1rem;">Haz tu pedido hoy</a>
+        <a href="index.html" class="logo">💧 acueducto-comopago</a>
+        <a href="#info" class="cta-button" style="padding: 10px 20px; font-size: 1rem;">Ver Guía</a>
     </header>
-
     <main>
         <section class="hero">
-            <h1>El Auténtico Sabor de la Comida Casera en Sogamoso</h1>
-            <p>Disfruta de recetas tradicionales preparadas diariamente con ingredientes frescos, dedicación y el inconfundible sabor a hogar.</p>
-            <a href="#contacto" class="cta-button">Reserva tu mesa o pide a domicilio</a>
+            <h1>Cómo Pagar el Servicio de Acueducto en Colombia de Forma Virtual</h1>
+            <p>Aprende paso a paso cómo utilizar los canales digitales para estar al día con tu factura, de manera segura y sin salir de casa.</p>
         </section>
-
-        <section class="section section-light">
-            <h2 class="section-title">¿Por qué comer con nosotros?</h2>
+        <section class="section section-light" id="info">
+            <h2 class="section-title">Métodos de Pago Virtual</h2>
             <div class="grid-3">
                 <div class="card">
-                    <h3>Sabor a Hogar</h3>
-                    <p>Cada plato es preparado con la misma sazón tradicional y amor que caracteriza la cocina de casa.</p>
+                    <h3>Botón PSE</h3>
+                    <p>La mayoría de empresas de acueducto permiten el pago a través del botón PSE desde su página oficial, debitando directamente de tu cuenta bancaria.</p>
                 </div>
                 <div class="card">
-                    <h3>Ingredientes Frescos</h3>
-                    <p>Seleccionamos diariamente verduras y carnes de la mejor calidad en los mercados locales de Sogamoso.</p>
+                    <h3>Apps Bancarias</h3>
+                    <p>Puedes registrar el convenio de tu empresa de acueducto en la app de tu banco y pagar la factura escaneando el código de barras o digitando tu número de referencia.</p>
                 </div>
                 <div class="card">
-                    <h3>Atención Cálida</h3>
-                    <p>Te recibimos con una sonrisa. Nuestro objetivo es que te sientas como en el comedor de tu propia casa.</p>
+                    <h3>Billeteras Digitales</h3>
+                    <p>Aplicaciones como Nequi o DaviPlata cuentan con secciones de "Servicios Públicos" donde puedes buscar la empresa de acueducto de tu ciudad.</p>
                 </div>
             </div>
         </section>
-
         <section class="section">
-            <h2 class="section-title">Nuestras Especialidades</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <h3>Almuerzos Corrientes</h3>
-                    <p>Menú del día variado, balanceado y económico. Perfecto para tu pausa del trabajo.</p>
-                </div>
-                <div class="card">
-                    <h3>Platos Especiales</h3>
-                    <p>Recetas tradicionales colombianas a la carta para esos días donde quieres darte un gusto.</p>
-                </div>
-                <div class="card">
-                    <h3>Servicio a Domicilio</h3>
-                    <p>Llevamos el sabor de nuestro restaurante directo a tu oficina u hogar en Sogamoso.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-light">
-            <h2 class="section-title">Lo que dicen nuestros comensales</h2>
-            <div class="grid-3">
-                <div class="testimonial-card">
-                    <p>"La sazón de Doña Mery es espectacular. Los almuerzos son abundantes y siempre te sirven calientito, justo como a mí me gusta."</p>
-                    <p class="testimonial-author">- Cliente Local Frecuente</p>
-                </div>
-                <div class="testimonial-card">
-                    <p>"Excelente lugar en Sogamoso para comer rico y a buen precio. La atención de todo el equipo es muy amable."</p>
-                    <p class="testimonial-author">- Visitante Satisfecho</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">Encuéntranos en Sogamoso</h2>
+            <h2 class="section-title">Consejos de Seguridad</h2>
             <div class="info-box">
-                <p><strong>Restaurante:</strong> Restaurante Doña Mery</p>
-                <p><strong>Administradora:</strong> Luz Mery Archila Bolaños</p>
-                <p><strong>Dirección Física:</strong> Cl. 17 # 9A-50, Sogamoso, Colombia</p>
-                <p><strong>Teléfono de Pedidos:</strong> <a href="tel:+573002823442" style="color: var(--primary); text-decoration: none; font-weight: bold;">300 282 3442</a></p>
-                <p><strong>Correo Electrónico:</strong> <a href="mailto:emmadavisooaw382@gmail.com" style="color: var(--text-dark);">emmadavisooaw382@gmail.com</a></p>
-                <p><strong>Horario de Atención:</strong> Todos los días de la semana, de 8:00 am a 5:00 pm</p>
+                <ul>
+                    <li style="margin-bottom: 10px;"><strong>Verifica la URL:</strong> Ingresa siempre digitando la dirección oficial de la empresa de acueducto de tu ciudad.</li>
+                    <li style="margin-bottom: 10px;"><strong>No uses redes públicas:</strong> Evita hacer pagos desde redes Wi-Fi públicas o cibercafés.</li>
+                    <li style="margin-bottom: 10px;"><strong>Cuidado con los correos falsos:</strong> Las empresas oficiales no piden contraseñas ni datos sensibles por correo electrónico.</li>
+                </ul>
             </div>
-        </section>
-
-        <section class="section section-light" id="contacto">
-            <h2 class="section-title">Contáctanos para Pedidos o Reservas</h2>
-            <form class="contact-form" id="reservaForm">
-                <div class="form-group">
-                    <label for="nombre">Nombre completo</label>
-                    <input type="text" id="nombre" name="nombre" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="telefono">Número de teléfono</label>
-                    <input type="tel" id="telefono" name="telefono" class="form-control" required>
-                </div>
-                <div class="form-group">
-                    <label for="mensaje">¿Qué deseas solicitar? (Ej. Domicilio, Reserva de mesa, Menú del día)</label>
-                    <textarea id="mensaje" name="mensaje" class="form-control" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="cta-button" style="width: 100%; margin-top: 10px;">Enviar Solicitud al Restaurante</button>
-                <p style="text-align: center; font-size: 0.85rem; margin-top: 15px; color: #666;">Al enviar este formulario, aceptas nuestra <a href="politica-de-privacidad.html" style="color: var(--primary);">Política de Privacidad</a>. No enviamos spam.</p>
-            </form>
         </section>
     </main>
-
     <footer>
-        <p>&copy; 2026 Restaurante Doña Mery. Dirigido por Luz Mery Archila Bolaños. Todos los derechos reservados.</p>
+        <p>&copy; 2026 acueducto-comopago. Proyecto con fines educativos.</p>
         <div style="margin-top: 20px;">
             <a href="politica-de-privacidad.html">Política de Privacidad</a>
             <a href="terminos-y-condiciones.html">Términos y Condiciones</a>
         </div>
     </footer>
-
-    <script>
-        document.getElementById('reservaForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Aquí iría la integración con tu CRM o envío de correo.
-            alert('¡Gracias por comunicarte con Restaurante Doña Mery! Hemos recibido tu solicitud y te contactaremos a la brevedad.');
-            this.reset();
-        });
-    </script>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Restaurant",
-      "name": "Restaurante Doña Mery",
-      "image": "https://via.placeholder.com/800x600/e65100/ffffff?text=Restaurante+Doña+Mery",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Cl. 17 # 9A-50",
-        "addressLocality": "Sogamoso",
-        "addressCountry": "CO"
-      },
-      "telephone": "+573002823442",
-      "email": "emmadavisooaw382@gmail.com",
-      "servesCuisine": "Colombian, Comida Casera",
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
-        ],
-        "opens": "08:00",
-        "closes": "17:00"
-      }
-    }
-    </script>
 </body>
 </html>
