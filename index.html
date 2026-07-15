@@ -3,85 +3,397 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>acueducto-comopago | Guía Educativa</title>
-    <meta name="description" content="Guía informativa y educativa sobre cómo pagar los servicios de acueducto en Colombia de manera virtual. Sitio no oficial.">
+    
+    <title>acueducto-comopago | Guía Educativa en Colombia</title>
+    <meta name="description" content="Guía estrictamente educativa e informativa sobre cómo pagar los servicios de acueducto en Colombia de manera virtual. No somos una entidad oficial.">
+    <meta name="keywords" content="pago acueducto Colombia, guía educativa, acueducto virtual, cómo pagar agua, tutorial PSE acueducto">
+    <link rel="canonical" href="https://tudominio.com/">
+    
+    <meta property="og:title" content="acueducto-comopago | Guía de Pagos Virtuales">
+    <meta property="og:description" content="Aprende de manera fácil y segura cómo pagar tu factura de acueducto por internet. Sitio 100% informativo.">
+    <meta property="og:type" content="website">
+    
     <style>
         :root {
-            --primary: #0277bd;
+            --primary: #0277bd; /* Azul acueducto */
             --primary-hover: #01579b;
             --secondary: #4fc3f7;
-            --bg-color: #f0f8ff;
-            --text-dark: #263238;
+            --bg-color: #f0f8ff; /* Azul muy claro */
+            --text-dark: #263238; /* Gris oscuro */
+            --text-light: #455a64;
             --white: #ffffff;
+            --alert: #c62828;
+            --alert-bg: #ffebee;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-dark); line-height: 1.6; }
-        .disclaimer { background-color: #ffebee; color: #c62828; padding: 15px; text-align: center; font-weight: bold; font-size: 0.95rem; }
-        header { background-color: var(--white); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
-        .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 10px; }
-        .cta-button { background-color: var(--primary); color: var(--white); padding: 14px 28px; font-weight: 600; text-decoration: none; border-radius: 8px; display: inline-block; transition: 0.3s; }
-        .cta-button:hover { background-color: var(--primary-hover); transform: translateY(-2px); }
-        .hero { background: linear-gradient(rgba(38, 50, 56, 0.8), rgba(38, 50, 56, 0.8)), url('https://via.placeholder.com/1920x1080/0277bd/ffffff?text=Agua+y+Servicios') center/cover; color: var(--white); text-align: center; padding: 100px 20px; }
-        .hero h1 { font-size: 2.8rem; margin-bottom: 20px; }
-        .hero p { font-size: 1.2rem; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
-        .section { padding: 80px 5%; text-align: center; }
-        .section-light { background-color: var(--white); }
-        .section-title { font-size: 2.2rem; color: var(--primary); margin-bottom: 40px; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
-        .card { background: var(--white); padding: 40px 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-bottom: 4px solid var(--primary); }
-        .card h3 { font-size: 1.4rem; margin-bottom: 15px; color: var(--text-dark); }
-        .info-box { background: var(--bg-color); border: 1px solid #b3e5fc; padding: 40px; border-radius: 12px; max-width: 800px; margin: 0 auto; text-align: left; }
-        footer { background-color: var(--text-dark); color: var(--white); text-align: center; padding: 40px 20px; }
-        footer a { color: var(--secondary); text-decoration: none; margin: 0 10px; }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Aviso Legal */
+        .disclaimer-banner {
+            background-color: var(--alert-bg);
+            color: var(--alert);
+            text-align: center;
+            padding: 12px 20px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            border-bottom: 2px solid var(--alert);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Botones y CTA */
+        .cta-button {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 14px 28px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(38, 50, 56, 0.8), rgba(38, 50, 56, 0.8)), url('https://via.placeholder.com/1920x1080/0277bd/ffffff?text=Pagos+Virtuales+Acueducto') center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Layout general de secciones */
+        .section {
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .section-light {
+            background-color: var(--white);
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 40px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 40px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-bottom: 4px solid var(--primary);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        /* Testimonios */
+        .testimonial-card {
+            background: var(--bg-color);
+            padding: 30px;
+            border-radius: 12px;
+            font-style: italic;
+            text-align: left;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+
+        .testimonial-author {
+            margin-top: 15px;
+            font-weight: 600;
+            font-style: normal;
+            color: var(--primary);
+        }
+
+        /* Contenedor de Información */
+        .info-box {
+            background: var(--bg-color);
+            border: 1px solid #b3e5fc;
+            padding: 40px;
+            border-radius: 12px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .info-box p {
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+
+        /* Formulario */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(2, 119, 189, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer a {
+            color: var(--secondary);
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.1rem; }
+        }
     </style>
 </head>
 <body>
-    <div class="disclaimer">
-        ⚠️ AVISO LEGAL: Esta página es MERAMENTE EDUCATIVA E INFORMATIVA. No somos una entidad gubernamental ni prestadora de servicios. No recibimos pagos ni pretendemos suplantar a ninguna empresa de acueducto en Colombia.
+
+    <div class="disclaimer-banner">
+        ⚠️ AVISO LEGAL: Esta página es MERAMENTE EDUCATIVA E INFORMATIVA. No somos una entidad gubernamental, no prestamos servicios públicos, no recibimos pagos y no pretendemos suplantar a ninguna empresa de acueducto en Colombia.
     </div>
+
     <header>
-        <a href="index.html" class="logo">💧 acueducto-comopago</a>
-        <a href="#info" class="cta-button" style="padding: 10px 20px; font-size: 1rem;">Ver Guía</a>
+        <a href="index.html" class="logo">
+            💧 acueducto-comopago
+        </a>
+        <a href="#contacto" class="cta-button" style="padding: 10px 20px; font-size: 1rem;">Envíanos tus dudas</a>
     </header>
+
     <main>
         <section class="hero">
-            <h1>Cómo Pagar el Servicio de Acueducto en Colombia de Forma Virtual</h1>
-            <p>Aprende paso a paso cómo utilizar los canales digitales para estar al día con tu factura, de manera segura y sin salir de casa.</p>
+            <h1>Guía Educativa: Cómo Pagar el Acueducto Virtualmente</h1>
+            <p>Aprende paso a paso cómo utilizar los canales digitales habilitados en Colombia para consultar y pagar tu factura del agua de forma segura desde casa.</p>
+            <a href="#contacto" class="cta-button">Solicita ayuda con nuestros tutoriales</a>
         </section>
-        <section class="section section-light" id="info">
-            <h2 class="section-title">Métodos de Pago Virtual</h2>
+
+        <section class="section section-light">
+            <h2 class="section-title">¿Por qué aprender a pagar por internet?</h2>
             <div class="grid-3">
                 <div class="card">
-                    <h3>Botón PSE</h3>
-                    <p>La mayoría de empresas de acueducto permiten el pago a través del botón PSE desde su página oficial, debitando directamente de tu cuenta bancaria.</p>
+                    <h3>Ahorro de Tiempo</h3>
+                    <p>Olvídate de las largas filas en los bancos o puntos de recaudo físicos. Aprenderás a hacer el trámite en menos de 5 minutos.</p>
                 </div>
                 <div class="card">
-                    <h3>Apps Bancarias</h3>
-                    <p>Puedes registrar el convenio de tu empresa de acueducto en la app de tu banco y pagar la factura escaneando el código de barras o digitando tu número de referencia.</p>
+                    <h3>Disponibilidad 24/7</h3>
+                    <p>Las plataformas virtuales de las empresas de acueducto están habilitadas todo el día. Aprende a pagar a cualquier hora.</p>
+                </div>
+                <div class="card">
+                    <h3>Seguridad y Confianza</h3>
+                    <p>Te enseñamos a identificar las páginas oficiales y a usar pasarelas de pago seguras para proteger tus datos bancarios.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Nuestras Guías Principales</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Uso del Botón PSE</h3>
+                    <p>Tutorial paso a paso sobre cómo registrarse y utilizar PSE para debitar el pago directamente de tu cuenta de ahorros o corriente.</p>
                 </div>
                 <div class="card">
                     <h3>Billeteras Digitales</h3>
-                    <p>Aplicaciones como Nequi o DaviPlata cuentan con secciones de "Servicios Públicos" donde puedes buscar la empresa de acueducto de tu ciudad.</p>
+                    <p>Guías prácticas para buscar el convenio de tu acueducto local y pagar usando aplicaciones móviles como Nequi o DaviPlata.</p>
+                </div>
+                <div class="card">
+                    <h3>Apps Bancarias</h3>
+                    <p>Aprende a inscribir tu factura mediante el número de referencia o escaneando el código de barras en la app de tu banco.</p>
                 </div>
             </div>
         </section>
-        <section class="section">
-            <h2 class="section-title">Consejos de Seguridad</h2>
-            <div class="info-box">
-                <ul>
-                    <li style="margin-bottom: 10px;"><strong>Verifica la URL:</strong> Ingresa siempre digitando la dirección oficial de la empresa de acueducto de tu ciudad.</li>
-                    <li style="margin-bottom: 10px;"><strong>No uses redes públicas:</strong> Evita hacer pagos desde redes Wi-Fi públicas o cibercafés.</li>
-                    <li style="margin-bottom: 10px;"><strong>Cuidado con los correos falsos:</strong> Las empresas oficiales no piden contraseñas ni datos sensibles por correo electrónico.</li>
-                </ul>
+
+        <section class="section section-light">
+            <h2 class="section-title">Lo que dicen nuestros lectores</h2>
+            <div class="grid-3">
+                <div class="testimonial-card">
+                    <p>"Gracias a esta guía informativa por fin entendí cómo buscar el convenio de mi municipio en mi app del banco. Me ahorré la fila de este mes."</p>
+                    <p class="testimonial-author">- Lector Frecuente</p>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Excelente sitio educativo. Tienen pasos muy claros y me ayudó a enseñarle a mis padres cómo usar PSE sin miedo a equivocarse."</p>
+                    <p class="testimonial-author">- Visitante Satisfecho</p>
+                </div>
             </div>
         </section>
+
+        <section class="section">
+            <h2 class="section-title">Datos del Proyecto Educativo</h2>
+            <div class="info-box">
+                <p><strong>Sitio Web:</strong> acueducto-comopago (Portal Informativo)</p>
+                <p><strong>Administradora:</strong> Luz Mery Archila Bolaños</p>
+                <p><strong>Dirección Física (Sede del Proyecto):</strong> Cl. 17 # 9A-50, Sogamoso, Colombia</p>
+                <p><strong>Teléfono de Contacto:</strong> <a href="tel:+573002823442" style="color: var(--primary); text-decoration: none; font-weight: bold;">300 282 3442</a></p>
+                <p><strong>Correo Electrónico:</strong> <a href="mailto:emmadavisooaw382@gmail.com" style="color: var(--text-dark);">emmadavisooaw382@gmail.com</a></p>
+                <p><strong>Horario de Atención de Dudas:</strong> Todos los días de la semana, de 8:00 am a 5:00 pm</p>
+            </div>
+        </section>
+
+        <section class="section section-light" id="contacto">
+            <h2 class="section-title">Contáctanos para Dudas o Sugerencias</h2>
+            <form class="contact-form" id="reservaForm">
+                <div class="form-group">
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" id="nombre" name="nombre" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Número de teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">¿Qué duda tienes sobre nuestras guías de pago? (Ej. Duda sobre PSE, sugerencia de nuevo tutorial)</label>
+                    <textarea id="mensaje" name="mensaje" class="form-control" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="cta-button" style="width: 100%; margin-top: 10px;">Enviar Consulta</button>
+                <p style="text-align: center; font-size: 0.85rem; margin-top: 15px; color: #666;">Al enviar este formulario, aceptas nuestra <a href="politica-de-privacidad.html" style="color: var(--primary);">Política de Privacidad</a>. No enviamos spam y no procesamos pagos aquí.</p>
+            </form>
+        </section>
     </main>
+
     <footer>
-        <p>&copy; 2026 acueducto-comopago. Proyecto con fines educativos.</p>
+        <p>&copy; 2026 acueducto-comopago. Dirigido por Luz Mery Archila Bolaños. Todos los derechos reservados. Sitio meramente educativo.</p>
         <div style="margin-top: 20px;">
             <a href="politica-de-privacidad.html">Política de Privacidad</a>
             <a href="terminos-y-condiciones.html">Términos y Condiciones</a>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('reservaForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Aquí iría la integración con tu CRM o envío de correo.
+            alert('¡Gracias por comunicarte con acueducto-comopago! Hemos recibido tu inquietud educativa y te contactaremos a la brevedad.');
+            this.reset();
+        });
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "acueducto-comopago",
+      "description": "Portal web educativo e informativo sobre cómo realizar pagos virtuales de servicios públicos en Colombia.",
+      "image": "https://via.placeholder.com/800x600/0277bd/ffffff?text=Acueducto+ComoPago",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Cl. 17 # 9A-50",
+        "addressLocality": "Sogamoso",
+        "addressCountry": "CO"
+      },
+      "telephone": "+573002823442",
+      "email": "emmadavisooaw382@gmail.com",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+        ],
+        "opens": "08:00",
+        "closes": "17:00"
+      }
+    }
+    </script>
 </body>
 </html>
